@@ -38,7 +38,11 @@ app.prepare().then(() => {
     return app.render(req, res, '/todo', req.query)
   })
 
-  server.post('todo/addtodo', (req, res) => {
+  server.put('todo/addtodo', (req, res) => {
+    return app.render(req, res, '/todo', req.query)
+  })
+
+  server.post('todo/edittodo', (req, res) => {
     return app.render(req, res, '/todo', req.query)
   })
 
