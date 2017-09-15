@@ -7,7 +7,6 @@ import pathMatch from 'path-match'
 import config from '~/config/server'
 import configDB from '~/config/db'
 import todoRouter from './routes/todo-route.js'
-import userRouter from './routes/user-route.js'
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -30,13 +29,8 @@ app.prepare().then(() => {
   server.use(bodyParser.urlencoded({extended: true}));
 
   server.use('/api', todoRouter)
-  server.use('/api', userRouter)
 
   const route = pathMatch()
-
-  server.get('todo/gettodo', (req, res) => {
-    return app.render(req, res, '/todo', req.query)
-  })
 
   server.put('todo/addtodo', (req, res) => {
     return app.render(req, res, '/todo', req.query)
@@ -45,9 +39,13 @@ app.prepare().then(() => {
   server.post('todo/edittodo', (req, res) => {
     return app.render(req, res, '/todo', req.query)
   })
+  
+  server.get('todo/gettodo', (req, res) => {
+    return app.render(req, res, '/todo', req.query)
+  })
 
-  server.get('user/search', (req, res) => {
-    return app.render(req, res, '/user', req.query)
+  server.delete('todo/deletetodo/:id', (req, res) => {
+    return app.render(req, res, '/todo', req.query)
   })
 
   server.get('*', (req, res) => {

@@ -1,8 +1,6 @@
 import request from 'supertest'
 import config from '~/config/server'
-import mongoose from 'mongoose'
-
-const id = new mongoose.mongo.ObjectId()
+const id = '59fd1400522efd04fdfd7140'
 const req = request(`${config.devSite}:${config.devPort}`)
 
 describe('#routes #todos', () => {
@@ -28,8 +26,8 @@ describe('#routes #todos', () => {
         .set('Accept', /application\/json/)
       expect(res.body.success)
         .toEqual(true)
-    });
-  });
+    })
+  })
 
   describe('GET /api/todo/gettodo', () => {
     it('should get todos from database "success"', async () => {
@@ -40,6 +38,13 @@ describe('#routes #todos', () => {
     })
   })
 
-
+  describe('DELETE /api/todo/deletetodo/:id', () => {
+    it('should delete todos from datebase "success"', async () => {
+      const res = await req
+        .delete('/api/todo/deletetodo/' + id)
+      expect(res.body.success)
+        .toEqual(true)
+    })
+  })
 
 })

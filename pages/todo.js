@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
 
-export default class Index extends Component {
+export default class Todo extends Component {
   render() {
     return (
       <div>
         <Layout>
         </Layout>
-        Index
+        Todo
       </div>
     )
   }
