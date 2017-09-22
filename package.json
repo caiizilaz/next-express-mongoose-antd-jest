@@ -10,15 +10,18 @@
     "build:node": "babel server -d dist --presets es2015,stage-2"
   },
   "dependencies": {
-    "antd": "^2.13.1",
     "body-parser": "^1.18.0",
     "express": "^4.15.4",
-    "isomorphic-unfetch": "^2.0.0",
+    "insert-css": "^2.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4",
     "mongoose": "^4.11.11",
     "next": "^3.2.2",
     "path-match": "^1.2.4",
+    "re-bulma": "^0.4.5",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "victory": "^0.22.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",

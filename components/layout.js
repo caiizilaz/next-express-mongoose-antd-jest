@@ -1,19 +1,15 @@
-import Head from 'next/head'
-import { LocaleProvider } from 'antd'
-import enUS from 'antd/lib/locale-provider/en_US'
-import Nav from './nav'
+import Header from './Header'
+import stylesheet from 'styles/global.scss'
 
-export default ({ children }) => (
+const Layout = (props) => (
   <div>
-    
-    <Head>
-      <link rel='stylesheet' href='http://cdn.bootcss.com/antd/2.9.3/antd.css' />
-    </Head>
-    <Nav />
-     
-
-    {/* <LocaleProvider locale={enUS}>
-      {children}
-    </LocaleProvider> */}
+    <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <Header />
+    <div>
+      {props.children}
+    </div>
   </div>
 )
+
+export default Layout

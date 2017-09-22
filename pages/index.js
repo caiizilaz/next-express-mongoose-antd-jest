@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Layout from '../components/layout'
+import Layout from '~/components/Layout'
 import stylesheet from 'styles/index.scss'
 
 export default class Index extends Component {
@@ -7,9 +7,9 @@ export default class Index extends Component {
     return (
       <div>
         <Layout>
+          <h1>index</h1>
+          <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         </Layout>
-        <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-        <h1>Index's Page</h1>
       </div>
     )
   }
