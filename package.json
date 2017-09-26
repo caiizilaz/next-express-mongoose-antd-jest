@@ -18,10 +18,12 @@
     "mongoose": "^4.11.11",
     "next": "^3.2.2",
     "path-match": "^1.2.4",
+    "prop-types": "^15.6.0",
     "re-bulma": "^0.4.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "victory": "^0.22.2"
+    "react-map-gl": "^3.0.4",
+    "recharts": "^1.0.0-apha.5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",

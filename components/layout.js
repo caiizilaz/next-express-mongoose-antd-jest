@@ -1,14 +1,20 @@
 import Header from './Header'
+import Footer from './Footer'
 import stylesheet from 'styles/global.scss'
+import Head from 'next/head'
 
 const Layout = (props) => (
   <div>
     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <Head>
+      <link rel='stylesheet' href='../static/lib/font-awesome/css/font-awesome.min.css' />
+      <link href='../static/lib/mapbox-gl.css' rel='stylesheet' />
+    </Head>
     <Header />
     <div>
       {props.children}
     </div>
+    <Footer />
   </div>
 )
 

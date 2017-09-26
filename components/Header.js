@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import insertCss from 'insert-css';
-import css from 're-bulma/build/css';
+import insertCss from 'insert-css'
+import css from 're-bulma/build/css'
 import { Nav, NavGroup, NavItem, NavToggle, Button, Icon } from 're-bulma'
 
 const layoutStyle = {
@@ -9,7 +9,7 @@ const layoutStyle = {
 }
 
 try {
-  if (typeof document !== 'undefined' || document !== null) insertCss(css, { prepend: true });
+  if (typeof document !== 'undefined' || document !== null) insertCss(css, { prepend: true })
 } catch (e) { }
 
 const Header = () => (
@@ -35,8 +35,13 @@ const Header = () => (
         </Link>
       </NavItem>
       <NavItem>
-        <Link href="/statistic">
-          <a>Statistic</a>
+        <Link href="/chart">
+          <a>Chart</a>
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link href="/map">
+          <a>Map</a>
         </Link>
       </NavItem>
       <NavItem>
@@ -48,8 +53,6 @@ const Header = () => (
       </NavItem>
     </NavGroup>
   </Nav>
-
-
 )
 
 export default Header
